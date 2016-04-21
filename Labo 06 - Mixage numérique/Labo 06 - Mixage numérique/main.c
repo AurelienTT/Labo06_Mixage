@@ -1,8 +1,8 @@
 /* Fichier : INFO2_labo05.c
-* Auteur  : Trolliet Aurélien & Ottensmeyer Léonard
-* Date    : 24.03.2016
+* Auteur  : Trolliet Aurélien & Pinto Almeida Claudio
+* Date    : 21.04.2016
 *
-* Description:  programme permettant de gérer un port
+* Description:  programme de mixage audio
 *
 * Remarque(s) :
 *
@@ -26,7 +26,7 @@ int main()
 	int choix = ZERO, valide = ZERO;
 	//char noPlaque[TAILLE_CHAINE];
 
-	printf("Labo04bis - Gestion d'un port\n\n");
+	printf("Labo06 - Mixage numerique\n\n");
 	printf("-------- Debut du programme ! --------\n\n");
 
 	//port = (Bateau*)calloc(NBR_MAX_BATEAUX, sizeof(Bateau));
@@ -38,11 +38,12 @@ int main()
 		printf("+-------------------------------------+\n");
 		printf("|            MENU PRINCIPAL           |\n");
 		printf("+-------------------------------------+\n");
-		printf("| %-35s |\n", "1. Ajouter un bateau");
-		printf("| %-35s |\n", "2. Supprimer un bateau");
-		printf("| %-35s |\n", "3. Afficher un apercu");
-		printf("| %-35s |\n", "4. Afficher le details des bateaux");
-		printf("| %-35s |\n", "5. Sauver le port");
+		printf("| %-35s |\n", "1. Charger la piste A");
+		printf("| %-35s |\n", "2. Charger la piste B");
+		printf("| %-35s |\n", "3. Decalage temporel A");
+		printf("| %-35s |\n", "4. Decalage temporel B");
+		printf("| %-35s |\n", "5. Reglage Volume A");
+		printf("| %-35s |\n", "5. Reglage Volume B");
 		printf("| %-35s |\n", "0. Quitter");
 		printf("+-------------------------------------+\n\n");
 		printf("Choix> ");
