@@ -151,10 +151,6 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="main.c" />
-    <ClCompile Include="wav.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="wav.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
