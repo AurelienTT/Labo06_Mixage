@@ -1,11 +1,11 @@
-/* Fichier : Nom_Du_Fichier.c
-* Auteur  : Vous
-* Date    : JJ.MM.AAAA
+/* Fichier : lol.c
+* Auteur  : Claudio Pinto Almeida
+* Date    : 21.04.2016
 *
-* Description : Description de ce que fait le code de ce fichier
+* Description : Claudio apprend comment lire des fichiers binaires
 *
 *
-* Remarque(s) :
+* Remarque(s) : Claudio est nul, oui
 *
 * Modifications : Date / Auteur / Raison
 *
@@ -18,12 +18,9 @@
 int main(void)
 {
 
-	/* Introduire ici vos déclarations */
+	
 
-	/* Introduire ici vos instructions */
-	printf("\n\nProgramme ...");
-
-	/* Pour terminer */
+	// Fin lol
 	system("pause");
 	return EXIT_SUCCESS;
 }
