@@ -22,8 +22,8 @@
 
 int main()
 {
-	WAV_HEADER* fichierA;
-	WAV_HEADER* fichierB;
+	//WAV_HEADER* fichierA;
+	//WAV_HEADER* fichierB;
 
 	int choix = ZERO, valide = ZERO;
 
@@ -72,6 +72,9 @@ int main()
 			break;
 		case 5:
 			//sauverPort(port);
+			break;
+		case 555:
+			main_claudio();
 			break;
 		default:
 			printf("Choix invalide !\n");
