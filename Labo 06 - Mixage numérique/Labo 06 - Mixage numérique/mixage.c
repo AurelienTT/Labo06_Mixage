@@ -34,7 +34,7 @@ chargerA(WAV_HEADER* fichierA) {
 	fichierWavA = fopen(nomFichier, "rb");
 	if (fichierWavA != NULL) {
 		fread(fichierA, 44, 1, fichierWavA);
-		fread((fichierA + 44), (fichierA->riff.length - 44), 1, fichierWavA);
+		//fread((fichierA + 44), (fichierA->riff.length - 44), 1, fichierWavA);
 		fclose(fichierWavA);
 	}
 	else
