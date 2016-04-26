@@ -17,16 +17,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Experience_claudio_chargement_en_memoire.h"
+#include "wav.h"
+#include "mixage.h"
 
 /*----------------------------------------------------------------------------*/
 int main_claudio(void)
 {
 	FILE * fichierBond_A;
+	WAV_HEADER * head_bond_A;
+
+
 	fichierBond_A = fopen("Bond_A.wav", "rb");
 	if (fichierBond_A != NULL)
 	{
 		//printf("\nSuccess lors de l'ouverture du fichier yo");
-		fseek(fichierBond_A, 44, SEEK_SET);
+		fread(head_bond_A, 44, 1, fichierBond_A);
+		//fread(head_bond_A, sizeof(long), 5, fichierBond_A);
+		printf("sample_rate = %ld\n", head_bond_A->format.sample_rate);
 	}
 	else
 	{
