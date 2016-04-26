@@ -11,13 +11,34 @@
 *
 * Compilateur : Visual Studio 2015
 */
-# include <stdio.h>
-# include <stdlib.h>
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
 
 /*----------------------------------------------------------------------------*/
-int main(void)
+int main_claudio(void)
 {
-
+	FILE * fichierBond_A;
+	fichierBond_A = fopen("Bond_A.wav", "rb");
+	if (fichierBond_A != NULL)
+	{
+		//printf("\nSuccess lors de l'ouverture du fichier yo");
+		
+	}
+	else
+	{
+		printf("\nErreur lors de l'ouverture du fichier yo");
+	}
+	if (fclose(fichierBond_A))
+	{
+		printf("\nLe fichier ne s'est pas fermé correctement :D");
+	}
+	else
+	{
+		printf("\nLe fichier s'est fermé correctement yey");
+	}
 	
 
 	// Fin lol
