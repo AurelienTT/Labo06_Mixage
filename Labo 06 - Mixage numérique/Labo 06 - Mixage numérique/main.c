@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "wav.h"
+#include "mixage.h"
 
 #define ZERO 0
 #define EOL '\n'
@@ -22,8 +23,8 @@
 
 int main()
 {
-	//WAV_HEADER* fichierA;
-	//WAV_HEADER* fichierB;
+	WAV_HEADER fichierA;
+	WAV_HEADER fichierB;
 
 	int choix = ZERO, valide = ZERO;
 
@@ -59,7 +60,7 @@ int main()
 		switch (choix)
 		{
 		case 1:
-		//	saisirBateau(port);
+			chargerA(&fichierA);
 			break;
 		case 2:
 			//supprimerBateau(port, noPlaque);
