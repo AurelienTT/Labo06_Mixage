@@ -23,8 +23,8 @@
 
 int main()
 {
-	WAV_HEADER* fichierA;
-	WAV_HEADER* fichierB;
+	WAV_HEADER fichierA;
+	WAV_HEADER fichierB;
 
 	int choix = ZERO, valide = ZERO;
 
@@ -60,7 +60,7 @@ int main()
 		switch (choix)
 		{
 		case 1:
-			chargerA(fichierA);
+			chargerA(&fichierA);
 			break;
 		case 2:
 			//supprimerBateau(port, noPlaque);

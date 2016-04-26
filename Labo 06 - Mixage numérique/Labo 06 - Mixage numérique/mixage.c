@@ -11,6 +11,7 @@
 * Compilateur : Visual Studio 2016
 */
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdlib.h>
 #include <stdio.h>
 #include "wav.h"
@@ -39,6 +40,6 @@ chargerA(WAV_HEADER* fichierA) {
 	{
 		printf("Erreur lors de l'ouverture du fichier A\n");
 	}
-	printf("sample_rate = %ld", fichierA->format.sample_rate);
+	printf("sample_rate = %ld\n", fichierA->format.sample_rate);
 	return EXIT_SUCCESS;
 }
