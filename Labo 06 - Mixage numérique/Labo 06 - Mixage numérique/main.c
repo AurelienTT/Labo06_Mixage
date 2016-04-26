@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "wav.h"
+#include "mixage.h"
 
 #define ZERO 0
 #define EOL '\n'
@@ -59,7 +60,7 @@ int main()
 		switch (choix)
 		{
 		case 1:
-		//	saisirBateau(port);
+			chargerA(fichierA);
 			break;
 		case 2:
 			//supprimerBateau(port, noPlaque);
