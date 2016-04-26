@@ -13,6 +13,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "wav.h"
 
 #define ZERO 0
 #define EOL '\n'
@@ -21,10 +22,10 @@
 
 int main()
 {
-	//Bateau* port;
+	WAV_HEADER* fichierA;
+	WAV_HEADER* fichierB;
 
 	int choix = ZERO, valide = ZERO;
-	//char noPlaque[TAILLE_CHAINE];
 
 	printf("Labo06 - Mixage numerique\n\n");
 	printf("-------- Debut du programme ! --------\n\n");
@@ -43,7 +44,8 @@ int main()
 		printf("| %-35s |\n", "3. Decalage temporel A");
 		printf("| %-35s |\n", "4. Decalage temporel B");
 		printf("| %-35s |\n", "5. Reglage Volume A");
-		printf("| %-35s |\n", "5. Reglage Volume B");
+		printf("| %-35s |\n", "6. Reglage Volume B");
+		printf("| %-35s |\n", "7. Mixer");
 		printf("| %-35s |\n", "0. Quitter");
 		printf("+-------------------------------------+\n\n");
 		printf("Choix> ");
