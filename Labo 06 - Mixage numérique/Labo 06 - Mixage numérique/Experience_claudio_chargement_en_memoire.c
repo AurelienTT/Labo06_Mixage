@@ -16,6 +16,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include "Experience_claudio_chargement_en_memoire.h"
 
 /*----------------------------------------------------------------------------*/
 int main_claudio(void)
@@ -25,7 +26,7 @@ int main_claudio(void)
 	if (fichierBond_A != NULL)
 	{
 		//printf("\nSuccess lors de l'ouverture du fichier yo");
-		
+		fseek(fichierBond_A, 44, SEEK_SET);
 	}
 	else
 	{

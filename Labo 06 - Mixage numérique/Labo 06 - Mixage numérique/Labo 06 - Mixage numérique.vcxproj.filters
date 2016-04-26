@@ -35,5 +35,8 @@
     <ClInclude Include="mixage.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Experience_claudio_chargement_en_memoire.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

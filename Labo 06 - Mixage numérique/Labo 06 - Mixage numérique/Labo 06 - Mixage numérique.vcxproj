@@ -155,6 +155,7 @@
     <ClCompile Include="wav.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Experience_claudio_chargement_en_memoire.h" />
     <ClInclude Include="mixage.h" />
     <ClInclude Include="wav.h" />
   </ItemGroup>
