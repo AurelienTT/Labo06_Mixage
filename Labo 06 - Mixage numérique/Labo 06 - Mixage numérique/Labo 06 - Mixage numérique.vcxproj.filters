@@ -24,9 +24,15 @@
     <ClCompile Include="wav.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="mixage.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wav.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="mixage.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
