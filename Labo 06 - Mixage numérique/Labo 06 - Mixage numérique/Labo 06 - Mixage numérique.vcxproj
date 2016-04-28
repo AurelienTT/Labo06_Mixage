@@ -146,16 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Experience_claudio_chargement_en_memoire.c">
-      <SubType>
-      </SubType>
-    </ClCompile>
     <ClCompile Include="main.c" />
     <ClCompile Include="mixage.c" />
     <ClCompile Include="wav.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Experience_claudio_chargement_en_memoire.h" />
     <ClInclude Include="mixage.h" />
     <ClInclude Include="wav.h" />
   </ItemGroup>

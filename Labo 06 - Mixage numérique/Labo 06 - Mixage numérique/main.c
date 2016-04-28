@@ -74,9 +74,6 @@ int main()
 		case 5:
 			//sauverPort(port);
 			break;
-		case 555:
-			main_claudio();
-			break;
 		default:
 			printf("Choix invalide !\n");
 		}

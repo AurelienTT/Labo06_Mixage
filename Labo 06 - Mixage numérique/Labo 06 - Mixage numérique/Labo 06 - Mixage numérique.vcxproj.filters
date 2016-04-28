@@ -18,9 +18,6 @@
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Experience_claudio_chargement_en_memoire.c">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="wav.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -33,9 +30,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="mixage.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Experience_claudio_chargement_en_memoire.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
