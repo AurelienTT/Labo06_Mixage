@@ -17,7 +17,7 @@
 #include "wav.h"
 #include "mixage.h"
 
-chargerA(WAV_HEADER* fichierA) {
+chargerA(WAV_HEADER* headerA, SAMPLE* fichierA) {
 	int ret = 0;
 	char nomFichier[TAILLE_CHAINE] = "";
 	FILE* fichierWavA;
@@ -33,15 +33,18 @@ chargerA(WAV_HEADER* fichierA) {
 
 	fichierWavA = fopen(nomFichier, "rb");
 	if (fichierWavA != NULL) {
-		fread(fichierA, 44, 1, fichierWavA);
-		printf("taille : %ld",fichierA->data.length);
-		//fread((fichierA + 44), (fichierA->riff.length - 44), 1, fichierWavA);
+		fread(headerA, 44, 1, fichierWavA);
+		printf("taille : %ld",headerA->data.length);
+
+		fichierA = (SAMPLE*)calloc((headerA->data.length/2), sizeof(SAMPLE));
+
+		fread((headerA + 44), (headerA->riff.length/2), 1, fichierWavA);
 		fclose(fichierWavA);
 	}
 	else
 	{
 		printf("Erreur lors de l'ouverture du fichier A\n");
 	}
-	printf("sample_rate = %ld\n", fichierA->format.sample_rate);
+	printf("sample_rate = %ld\n", headerA->format.sample_rate);
 	return EXIT_SUCCESS;
 }

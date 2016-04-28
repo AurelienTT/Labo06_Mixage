@@ -13,5 +13,9 @@
 
 #define TAILLE_CHAINE 20
 
-
 chargerA(WAV_HEADER* fichierA);
+
+typedef struct {
+	char gauche;
+	char droite;
+}SAMPLE;

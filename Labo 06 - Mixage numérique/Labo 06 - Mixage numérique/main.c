@@ -31,7 +31,6 @@ int main()
 	printf("Labo06 - Mixage numerique\n\n");
 	printf("-------- Debut du programme ! --------\n\n");
 
-	//port = (Bateau*)calloc(NBR_MAX_BATEAUX, sizeof(Bateau));
 	//chargerPort(port);
 	
 	do
