@@ -31,9 +31,9 @@ int main_claudio(void)
 	if (fichierBond_A != NULL)
 	{
 		//printf("\nSuccess lors de l'ouverture du fichier yo");
-		fread(head_bond_A, 44, 1, fichierBond_A);
+		//fread(head_bond_A, 44, 1, fichierBond_A);
 		//fread(head_bond_A, sizeof(long), 5, fichierBond_A);
-		printf("sample_rate = %ld\n", head_bond_A->format.sample_rate);
+		//printf("sample_rate = %ld\n", head_bond_A->format.sample_rate);
 	}
 	else
 	{
