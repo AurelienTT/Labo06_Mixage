@@ -23,15 +23,22 @@
 
 int main()
 {
-	WAV_HEADER fichierA;
-	WAV_HEADER fichierB;
+	WAV_HEADER headerA;
+//	WAV_HEADER headerB;
 
+	SAMPLE* fichierA;
+	fichierA = (SAMPLE*)calloc(10, sizeof(SAMPLE));
+	if (fichierA == NULL)
+	{
+		printf("Echec Allocation memoire\n");
+	}
+//	SAMPLE* fichierB;
+
+	int n = 0;
 	int choix = ZERO, valide = ZERO;
 
 	printf("Labo06 - Mixage numerique\n\n");
 	printf("-------- Debut du programme ! --------\n\n");
-
-	//chargerPort(port);
 	
 	do
 	{
@@ -59,10 +66,10 @@ int main()
 		switch (choix)
 		{
 		case 1:
-			chargerA(&fichierA);
+			fichierA = chargerA(&headerA, fichierA);
 			break;
 		case 2:
-			//supprimerBateau(port, noPlaque);
+			//chargerB(&headerB, fichierB);
 			break;
 		case 3:
 			//afficherSommaire(port);
@@ -70,13 +77,19 @@ int main()
 		case 4:
 			//afficherDetails(port);
 			break;
-		case 5:
-			//sauverPort(port);
+		case 7:
+			for (n = 0; n < 10; n++) {
+				printf("G:%d | D:%d\n", fichierA[n].gauche, fichierA[n].droite);
+			};
 			break;
 		default:
 			printf("Choix invalide !\n");
 		}
 	} while (choix != ZERO);
+
+	for (n = 0; n < 10; n++) {
+		printf("G:%d | D:%d", fichierA[n].gauche, fichierA[n].droite);
+	};
 	//free(port);
 	return EXIT_SUCCESS;
 }

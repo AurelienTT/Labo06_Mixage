@@ -17,10 +17,11 @@
 #include "wav.h"
 #include "mixage.h"
 
-chargerA(WAV_HEADER* headerA, SAMPLE* fichierA) {
+SAMPLE* chargerA(WAV_HEADER* headerA, SAMPLE* fichierA) {
 	int ret = 0;
 	char nomFichier[TAILLE_CHAINE] = "";
 	FILE* fichierWavA;
+	SAMPLE* temp;
 
 	do {
 		printf("Nom du fichier A : ");
@@ -33,18 +34,36 @@ chargerA(WAV_HEADER* headerA, SAMPLE* fichierA) {
 
 	fichierWavA = fopen(nomFichier, "rb");
 	if (fichierWavA != NULL) {
-		fread(headerA, 44, 1, fichierWavA);
-		printf("taille : %ld",headerA->data.length);
-
-		fichierA = (SAMPLE*)calloc((headerA->data.length/2), sizeof(SAMPLE));
-
-		fread((headerA + 44), (headerA->riff.length/2), 1, fichierWavA);
+		fread(headerA, 44, 1, fichierWavA);			//Recherche de la longueur de la musique pour calloc
+		temp = (SAMPLE*)realloc(fichierA, 1000*sizeof(SAMPLE));
+		if (temp != NULL) {
+			printf("Reallocation Reussie");
+			fichierA = temp;
+		}
+		fread(fichierA, sizeof(SAMPLE) ,(headerA->data.length/2), fichierWavA);
 		fclose(fichierWavA);
 	}
 	else
 	{
 		printf("Erreur lors de l'ouverture du fichier A\n");
 	}
-	printf("sample_rate = %ld\n", headerA->format.sample_rate);
+	return fichierA;
+}
+
+int ExportWav(SAMPLE* sample) {
+	FILE* fichierWav;
+	fichierWav = fopen("musique.wav", "wb");
+	if (fichierWav != NULL)
+	{
+		fwrite(sample, sizeof(SAMPLE), 100, fichierWav);
+		if (ferror(fichierWav))
+		{
+			printf("Erreur d'écriture du fichier .dat\n");
+		}
+	}
+	else
+		printf("Erreur lors de l'ouverture du fichier de sauvegarde.\n");
+	if (fclose(fichierWav))
+		printf("Le fichier de sauvegarde n'a pas ete correctement ferme.\n)");
 	return EXIT_SUCCESS;
 }
