@@ -11,12 +11,18 @@
 * Compilateur : Visual Studio 2016
 */
 
-#define TAILLE_CHAINE 20
+#define TAILLE_CHAINE 30
+#define SAMPLE_RATE 44100
+
+long decalage();
+short sommeShort(short a, short b);
 
 typedef struct {
 	short gauche;
 	short droite;
 }SAMPLE;
 
-SAMPLE* chargerA(WAV_HEADER* headerA, SAMPLE* fichierA);
-int ExportWav(SAMPLE* sampleTab);
+
+SAMPLE* charger(WAV_HEADER* header);
+void mix(WAV_HEADER* headerA, SAMPLE* sampleA, WAV_HEADER* headerB, SAMPLE* sampleB, long blancA, long blancB);
+void regVolume(WAV_HEADER* header, SAMPLE* sample);

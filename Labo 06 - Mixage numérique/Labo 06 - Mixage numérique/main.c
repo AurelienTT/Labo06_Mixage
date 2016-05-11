@@ -24,15 +24,13 @@
 int main()
 {
 	WAV_HEADER headerA;
-//	WAV_HEADER headerB;
+	WAV_HEADER headerB;
 
-	SAMPLE* fichierA;
-	fichierA = (SAMPLE*)calloc(10, sizeof(SAMPLE));
-	if (fichierA == NULL)
-	{
-		printf("Echec Allocation memoire\n");
-	}
-//	SAMPLE* fichierB;
+	SAMPLE* fichierA = NULL;
+	SAMPLE* fichierB = NULL;
+
+	long blancA = 0;
+	long blancB = 0;
 
 	int n = 0;
 	int choix = ZERO, valide = ZERO;
@@ -66,21 +64,25 @@ int main()
 		switch (choix)
 		{
 		case 1:
-			fichierA = chargerA(&headerA, fichierA);
+			fichierA = charger(&headerA);
 			break;
 		case 2:
-			//chargerB(&headerB, fichierB);
+			fichierB = charger(&headerB);
 			break;
 		case 3:
-			//afficherSommaire(port);
+			blancA = decalage();
 			break;
 		case 4:
-			//afficherDetails(port);
+			blancB = decalage();
+			break;
+		case 5:
+			regVolume(&headerA, fichierA);
+			break;
+		case 6:
+			regVolume(&headerB, fichierB);
 			break;
 		case 7:
-			for (n = 0; n < 10; n++) {
-				printf("G:%d | D:%d\n", fichierA[n].gauche, fichierA[n].droite);
-			};
+			mix(&headerA, fichierA, &headerB, fichierB, blancA, blancB);
 			break;
 		default:
 			printf("Choix invalide !\n");
