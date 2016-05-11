@@ -168,8 +168,8 @@ void regVolume(WAV_HEADER* header, SAMPLE* sample) {
 	printf("\n");
 
 	for (n = 0; n < (header->data.length / 2); n++) {
-		sample[n].droite = sample[n].droite*(pourCent / 100.);
-		sample[n].gauche = sample[n].gauche*(pourCent / 100.);
+		sample[n].droite = (short) sample[n].droite*(pourCent / 100.);
+		sample[n].gauche = (short) sample[n].gauche*(pourCent / 100.);
 	}
 }
 
